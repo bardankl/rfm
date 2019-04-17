@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RFM</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<div>
+<p>Выберите файл с клиентами:</p>
+<input type="file" id="file-object">
+<div id="result"></div>
+
+</div>
+
+<header class="header">
+    <h3>SOHOROOMS.UA</h3>
+    <h1>Сегментация клиентской базы</h1>
+    <button id='getSegment'>Сегментировать</button>
+    <input type="button" value="Просмотреть сегменты RFM" id="rfmGetSegmentation">
+</header>
+
+<table class="table, hide" id="rfmTable">
+    <tr><th>Сегмент</th><th>Кол-во клиентов</th></tr>
+    <tr><td>111</td><td id="111"></td></tr>
+    <tr><td>112</td><td id="112"></td></tr>
+    <tr><td>113</td><td id="113"></td></tr>
+    <tr><td>121</td><td id="121"></td></tr>
+    <tr><td>122</td><td id="122"></td></tr>
+    <tr><td>123</td><td id="123"></td></tr>
+    <tr><td>131</td><td id="131"></td></tr>
+    <tr><td>132</td><td id="132"></td></tr>
+    <tr><td>133</td><td id="133"></td></tr>
+    <tr><td>211</td><td id="211"></td></tr>
+    <tr><td>212</td><td id="212"></td></tr>
+    <tr><td>213</td><td id="213"></td></tr>
+    <tr><td>221</td><td id="221"></td></tr>
+    <tr><td>222</td><td id="222"></td></tr>
+    <tr><td>223</td><td id="223"></td></tr>
+    <tr><td>231</td><td id="231"></td></tr>
+    <tr><td>232</td><td id="232"></td></tr>
+    <tr><td>233</td><td id="233"></td></tr>
+    <tr><td>311</td><td id="311"></td></tr>
+    <tr><td>312</td><td id="312"></td></tr>
+    <tr><td>313</td><td id="313"></td></tr>
+    <tr><td>321</td><td id="321"></td></tr>
+    <tr><td>322</td><td id="322"></td></tr>
+    <tr><td>323</td><td id="323"></td></tr>
+    <tr><td>331</td><td id="331"></td></tr>
+    <tr><td>332</td><td id="332"></td></tr>
+    <tr><td>333</td><td id="333"></td></tr>
+</table>
+<table class="table" id="tableClientQuantity">
+    <tr><th>Сегмент</th><th>Сетмент RFM</th><th>Количество клиентов</th></tr>
+    <tr><td>VIP</td><td>112, 122, 132, 111, 211, 311, 121, 321, 331, 221, 131</td><td id="vipQ"></td></tr>
+    <tr><td>Average</td><td>212, 222, 232, 231</td><td id="avQ"></td></tr>
+    <tr><td>LOW</td><td>312,322,113,213,123,223,133,233</td><td id="lowQ"></td></tr>
+    <tr><td>Zero</td><td>333, 323,332</td><td id="zeroQ"></td></tr>
+</table>
+<div class="buttons">
+    <input type="button" id="getVipEmails" value="получить VIP emails">
+    <input type="button" id="getVipPhones" value="получить VIP phones">
+    <input type="button" id="getAsEmails" value="получить AS emails">
+    <input type="button" id="getAsPhones" value="получить AS phones">
+    <input type="button" id="getLowEmails" value="получить LOW emails">
+    <input type="button" id="getLowPhones" value="получить LOW phones">
+    <input type="button" id="getZeroEmails" value="получить ZERO emails">
+    <input type="button" id="getZeroPhones" value="получить ZERO phones">
+</div>
+<div id="listOfContacts"></div>
+<h1>VIP</h1>
+<table class="table" id="clientsSegmentsVIP">
+    <tr><th>№</th><th>Имя Фамилия</th><th>Телефон</th><th>Email</th><th>Выторг</th><th>Средний чек</th><th>Количество купленных единиц</th><th>Количество купленных заказов</th><th>Дата покупки</th><th>RFM сегмент</th></tr>
+</table>
+<h1>AVERAGE</h1>
+<table class="table" id="clientsSegmentsAs">
+    <tr><th>№</th><th>Имя Фамилия</th><th>Телефон</th><th>Email</th><th>Выторг</th><th>Средний чек</th><th>Количество купленных единиц</th><th>Количество купленных заказов</th><th>Дата покупки</th><th>RFM сегмент</th></tr>
+</table>
+<h1>LOW</h1>
+<table class="table" id="clientsSegmentsLow">
+    <tr><th>№</th><th>Имя Фамилия</th><th>Телефон</th><th>Email</th><th>Выторг</th><th>Средний чек</th><th>Количество купленных единиц</th><th>Количество купленных заказов</th><th>Дата покупки</th><th>RFM сегмент</th></tr>
+</table>
+<h1>ZERO</h1>
+<table class="table" id="clientsSegmentsZero">
+    <tr><th>№</th><th>Имя Фамилия</th><th>Телефон</th><th>Email</th><th>Выторг</th><th>Средний чек</th><th>Количество купленных единиц</th><th>Количество купленных заказов</th><th>Дата покупки</th><th>RFM сегмент</th></tr>
+</table>
+
+
+
+<!--<div id="segments">-->
+    <!--<ul id="segmentVip"> <h1>VIP</h1>-->
+
+    <!--</ul>-->
+    <!--<ul id="segmentAv"> <h1>AVERAGE</h1>-->
+
+    <!--</ul>-->
+    <!--<ul id="segmentLow"> <h1>LOW</h1>-->
+
+    <!--</ul>-->
+    <!--<ul id="segmentZero"> <h1>ZERO</h1>-->
+
+    <!--</ul>-->
+
+<!--</div>-->
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/xlsx/dist/xlsx.full.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

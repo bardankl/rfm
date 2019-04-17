@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.table {
+    width: 100%;
+    /*border-spacing: 1px;*/
+    border: 2px solid black;
+    align-items: center;
+}
+th, td {
+    border: solid black 1px;
+    text-align: center;
+}
+.hide {
+    display: none;
+}
+.clientPhone {
+    margin: 0;
+    padding: 0;
+}
